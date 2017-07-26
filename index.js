@@ -14,11 +14,14 @@ function queryIMDP(search) {
   })
 }
 
+
+
 function parseHTML(html) {
   const $ = cheerio.load(html)
   const movieNames = $('.result_text')
     .map((index, element) => $(element).text())
     .toArray()
+    // .get().join('')
   console.log('------------------------------------');
   console.log(movieNames);
   console.log('------------------------------------');
