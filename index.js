@@ -18,17 +18,13 @@ function queryIMDP(search, callBack) {
 
 
 
-function getMovieTitles(html) {
+function getMovieTitles(html) {  //rebuild using js only no cheerio
   const $ = cheerio.load(html)
   const movieNames = $('.findSection')
-    // .first()
+    .first()
     .find('.result_text')
     .map((index, element) => $(element).text())
     .toArray()
-    // .get().join('')
-  // console.log('------------------------------------');
-  // console.log(movieNames);
-  // console.log('------------------------------------');
   return movieNames
 }
 
